@@ -29,7 +29,13 @@ docker run --rm \
 cp -p .env.example .env
 ```
 
-### 4. Start the project in detached mode
+### 4. Change `DB_HOST` in `.env`
+
+```bash
+DB_HOST=mysql
+```
+
+### 5. Start the project in detached mode
 
 ```bash
 ./vendor/bin/sail up -d
@@ -40,25 +46,25 @@ Access to the docker container
 ./vendor/bin/sail bash
 ```
 
-### 5. run `npm install`
+### 6. run `npm install`
 ```bash
 ./vendor/bin/sail bash
 npm install
 ```
 
-### 6. Set encryption key
+### 7. Set encryption key
 
 ```bash
 php artisan key:generate --ansi
 ```
 
-### 7. Run migrations
+### 8. Run migrations
 
 ```bash
 php artisan migrate
 ```
 
-### 8. Add Filament Admin user
+### 9. Add Filament Admin user
 
 ```bash
 php artisan make:filament-user
